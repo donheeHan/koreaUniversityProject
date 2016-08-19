@@ -1,0 +1,10 @@
+.clear{clear:both;}
+
+body{
+	margin:0;
+	paddion:0;
+}
+
+#decorator_footer{
+	background-color: #E0F8EC; 
+}

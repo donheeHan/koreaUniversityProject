@@ -1,0 +1,18 @@
+.clear{clear:both;}
+
+body{
+	margin:0;
+	paddion:0;
+}
+
+#decorator_header{
+	text-align:center;
+	background-color: #E0F8EC;
+}
+
+#decorator_header #main_img{
+	margin-top:20px;
+	margin-bottom:20px;
+	height:100px;
+	width: 100px;
+}  
