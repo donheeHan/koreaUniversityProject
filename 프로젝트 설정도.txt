@@ -1,0 +1,143 @@
+패키지구조(기능별)
+
+공지사항 게시판 - notice
+쪽지 - message
+로그인/비밀번호찾기 - login
+개인정보관리 - indivInfoManage
+부/다전공신청 - majorREQ
+학적관리 - colleageManage
+구성원정보관리 - memberManage
+학과정보관리 - departmentManage
+졸업요건 - graduRequire
+학사일정 - acadeCal
+수강편람 - crsesBook
+성적조회 - scoreInquiry
+수업평가 - classApp
+수강내역조회 - crsesInquiry
+수업시간표 - timeTable
+강의계획서 - classSYL
+수강명단조회 - crsesList
+학기성적반영(행정)/성적입력(교수) - semesScore
+수강신청 - crsesREQ       
+상담 - advice	20
+등록 - reg
+증명서 - certificate
+
+
+// url mapping     (cyber ? stu)
+사이버캠퍼스 - cyberCam  3
+	강의계획서 - classSYL
+	수강생조회/출석 - crsesStu
+	공지사항게시판 - noticeBBS
+	질문게시판 - qnaBBS / 답글
+	자유게시판 - freeBBS / 답글
+	학습자료실 - studyBBS
+	온라인콘텐츠 - onlineCon
+	과제 - task
+
+=====================================================================
+
+리소스폴더구조(화면별)
+common(공통)
+- css
+- js // 웹소켓 js 파일 두개(sockjs-0.3.min.js/stomp.min.js), jquery-1.12.4.js
+- images
+
+pro(교수)
+- css
+- js
+- images
+
+stu(학생)
+- css
+- js
+- images
+
+emp(교직원)
+- css
+- js
+- images
+
+=====================================================================
+
+views 폴더구조(화면별)
+
+views 밑 --> 공통화면 로그인/메인 까지
+
+cyberCampus 사이버캠퍼스
+	-stu / 학생화면
+	-pro / 교수화면
+
+decorators 사이트메쉬 헤더/푸터
+
+emp 교직원 화면
+
+pro 교수화면
+
+stu 학생화면
+
+=====================================================================
+
+pom.xml 라이브러리 등록(디펜던시)
+
+- 웹소켓 xml 버전 3.0 이상수정
+- 스프링 버전 4.0.4 수정
+- 자바버전 1.7 수정
+- sitemesh
+- jackson json변환
+- oracle repository
+- oracle
+- mybatis
+- mybatis spring 
+- apache commons dbcp 
+- fileUpload
+- excel poi
+- itext
+- transaction
+- aop
+- aspects
+- log4sql(+WEB-INF jar)
+- cos
+- security
+
+=====================================================================
+
+
+web.xml 필터 등록(필터)
+
+- 웹소켓 xml 사용 3.0 버전 수정
+
+- sitemesh 필터
+- utf-8 한글 인코딩 필터
+- security 필터 등록
+
+
+=====================================================================
+
+servlet-context.xml
+
+=====================================================================
+
++security-context.xml 생성
+
+=====================================================================
+
+씨큐리티 url 매핑시에 로그인폼 빼고 전부 url매핑
+
+=====================================================================
+
+트랜잭션 메서드명★★★★★★★★★★★★★★
+insert*
+delete*
+update*
+get*
+
+url 매핑 통일성!!!!!! 중요★★★★★★★★★
+
+
+@RequestMapping(value="", method=RequestMethod.GET)
+public String a(){
+	String url="";
+	
+	return url;
+}
